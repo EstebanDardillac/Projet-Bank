@@ -50,7 +50,7 @@ echo '</div><hr>';
 
 // TEST getBy
 echo '<div><h2>Test getBy</h2>';
-$contactForm1b = $dbManager->getById('contact_forms', 'id', 1, 'ContactForm');
+$contactForm1b = $dbManager->getBy('contact_forms', 'id', 1, 'ContactForm');
 
 var_dump($contactForm1b);
 echo '</div><hr>';
@@ -90,7 +90,7 @@ echo '</div><hr>';
 
 // TEST remove by id
 echo '<div><h2>remove by id</h2>';
-$removed = $dbManager->getById('contact_forms', 1);
+$removed = $dbManager->removeById('contact_forms', 1);
 
 var_dump($removed);
 echo '</div><hr>';
