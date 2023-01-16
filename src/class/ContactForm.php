@@ -1,6 +1,6 @@
 <?php
 
-class ContactForm {
+class ContactForm extends DbObject {
     public $id;
 	public $fullname;
 	public $phone;
