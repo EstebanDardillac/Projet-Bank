@@ -15,8 +15,9 @@ class DbManager {
         $this->db = $db;
     }
 
+    // return l'id inseré
     function insert(string $sql, array $data) {
-
+        // $this->db->prepare
     }
 
     function insert_advanced(DbObject $dbObj) {
