@@ -1,3 +1,3 @@
 <footer>
-    <p>&copy; <?= date('Y'); ?></p>
+    <p class="credit">&copy; <?= date('Y'); ?></p>
 </footer>
