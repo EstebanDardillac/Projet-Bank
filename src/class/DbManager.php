@@ -1,6 +1,6 @@
 <?php 
 
-require_once DIR . '/DbObject.php';
+require_once __DIR__ . '/DbObject.php';
 
 /**
  * La classe DbManager doit pouvoir gérer n'importe quelle table de votre base de donnée
@@ -23,10 +23,10 @@ class DbManager {
     }
 
     function insert_advanced(DbObject $dbObj) {
-        /$ins = $this->db ->prepare($sql);
+        /*$ins = $this->db ->prepare($sql);
         $ins -> execute($data);
         $ins->setFetchMode(PDO::FETCH_CLASS, 'ContcatForms');
-        return $ins->fetchAll();/
+        return $ins->fetchAll();*/
     }
 
     function select(string $sql, array $data, string $className) {
@@ -37,14 +37,10 @@ class DbManager {
     }
 
     function getById(string $tableName, $id, string $className) {
-        $gbi = $this->db ->prepare("SELECT FROM $tableName WHERE id = :id");
-$gbi->execute(["id" => $id]);
-        $result = $gbi->fetch(PDO::FETCH_ASSOC);
-        $object = new $className();
-        foreach ($result as $key => $value) {
-            $object->$key = $value;
-        }
-        return $object;
+        $gbi = $this->db ->prepare("SELECT * FROM $tableName WHERE id = :id");
+        $gbi->execute(["id" => $id]);
+        $gbi->setFetchMode(PDO:: FETCH_CLASS, $className);
+        return $gbi->fetch();
     }
 
 
@@ -55,14 +51,10 @@ $gbi->execute(["id" => $id]);
     }
 
     function getBy(string $tableName, string $column, $valeur, string $className) {
-        $gb = $this->db ->prepare("SELECT $column FROM $tableName WHERE valeur = :valeur");
-        $gb-> execute("valeur" => $valeur);
-        $result = $gb->fetch(PDO::FETCH_ASSOC);
-        $object = new $className();
-        foreach ($result as $key => $value) {
-            $object->$key = $value;
-        } 
-        return $object;
+        $gb = $this->db ->prepare("SELECT * FROM $tableName WHERE $column = :valeur");
+        $gb-> execute(["valeur" => $valeur]);
+        $gb->setFetchMode(PDO:: FETCH_CLASS, $className);
+        return $gb->fetchAll();
     }
 
     function getBy_advanced(string $column, $value, string $className) {
@@ -74,10 +66,9 @@ $gbi->execute(["id" => $id]);
     }
 
     function update(string $tableName, array $data) {
-        $upd = $this->db -> prepare($tableName);
-        $upd->execute($data);
-        return $tableName;
-        return $data;
+        $upd = $this->db->prepare("UPDATE $tableName SET " . implode('= ? , ', array_keys($data)) . '= ? WHERE id = :id');
+        $upd->execute(array_values($data));
+        return true;
     }
 
     function update_advanced(DbObject $dbObj) {
