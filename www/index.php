@@ -11,7 +11,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 <body>
 
 <div>
-    <h1>Home page</h1>
+    <h1 class="title">The Bank</h1>
 </div>
 
 <?php require_once __DIR__ . '/../src/templates/partials/footer.php'; ?>

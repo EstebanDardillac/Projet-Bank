@@ -1,3 +1,7 @@
 .error-alert {
     background-color: red;
 }
+
+.title {
+    display: flex;
+}
