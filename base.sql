@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mar. 17 jan. 2023 à 09:44
+-- Généré le : mar. 17 jan. 2023 à 13:03
 -- Version du serveur :  5.7.34
--- Version de PHP : 7.4.21
+-- Version de PHP : 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `ProjetBank`
+-- Base de données : `projectbank`
 --
 
 -- --------------------------------------------------------
@@ -59,7 +59,10 @@ CREATE TABLE `contact_forms` (
 
 INSERT INTO `contact_forms` (`id`, `fullname`, `phone`, `email`, `message`, `created_at`) VALUES
 (1, 'Test 1', '09090909', 'test1@test.com', 'Votre message', '2023-01-16 10:50:29'),
-(2, 'Test 2', '08080808', 'test2@test.com', 'Votre message 2', '2023-01-16 11:03:23');
+(2, 'Test 2', '08080808', 'test2@test.com', 'Votre message 2', '2023-01-16 11:03:23'),
+(3, 'Test fullname', '08020282924', 'test@test.com', 'TEST Message', '2023-01-17 11:37:22'),
+(4, 'Test fullname', '08020282924', 'test@test.com', 'TEST Message', '2023-01-17 11:41:12'),
+(5, 'Test fullname', '08020282924', 'test@test.com', 'TEST Message', '2023-01-17 11:47:25');
 
 -- --------------------------------------------------------
 
@@ -68,11 +71,9 @@ INSERT INTO `contact_forms` (`id`, `fullname`, `phone`, `email`, `message`, `cre
 --
 
 CREATE TABLE `currencies` (
-  `euro` int(11) NOT NULL,
-  `dollar` int(11) NOT NULL,
-  `livres` int(11) NOT NULL,
-  `bitcoin` int(11) NOT NULL,
-  `yens` int(11) NOT NULL
+  `id_de_la_money` int(11) NOT NULL,
+  `nom_de_la_money` int(11) NOT NULL,
+  `taux_de_change` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -155,7 +156,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `contact_forms`
 --
 ALTER TABLE `contact_forms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `users`
