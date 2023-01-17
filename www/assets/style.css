@@ -1,7 +1,25 @@
+body {
+    background-color: #2C2F33;
+}
+
 .error-alert {
     background-color: red;
 }
 
 .title {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.contour {
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+
+
+
+.credit {
     display: flex;
 }
