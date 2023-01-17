@@ -2,7 +2,7 @@
 
 $config = ['db' => [
     'host' => 'localhost',
-    'name' => 'exo_PHP',
+    'name' => 'projetbank',
     'port' => 8888,
     'user' => 'root',
     'pass' => 'root'
