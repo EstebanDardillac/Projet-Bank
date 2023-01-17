@@ -66,9 +66,16 @@ class DbManager {
     }
 
     function update(string $tableName, array $data) {
-        $upd = $this->db->prepare("UPDATE $tableName SET " . implode('= ? , ', array_keys($data)) . '= ? WHERE id = :id');
-        $upd->execute(array_values($data));
-        return true;
+        $sql = 'UPDATE '.$tableName.' SET ';
+        foreach($data as $clef => $value){
+            if ($clef != 'id'){
+                $sql = $sql.$clef.'=:'.$clef.', ';
+            }
+        }
+        $sql = substr($sql,0,-2);
+        var_dump($sql);
+        $req = $this->db->prepare($sql.' WHERE id=:id');
+        $req->execute($data);
     }
 
     function update_advanced(DbObject $dbObj) {
