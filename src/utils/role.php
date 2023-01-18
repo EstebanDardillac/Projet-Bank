@@ -1,6 +1,5 @@
 <?php
 $role = "invité"
-$acces = FALSE
 if($user != false){
     switch ($user->role) {
         case 1000:
