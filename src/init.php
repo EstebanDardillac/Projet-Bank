@@ -23,3 +23,6 @@ $user = false;
 if (isset($_SESSION['user_id'])) {
     $user = $dbManager->getById('users', $_SESSION['user_id'], 'User');
 }
+
+require_once __DIR__ .'/utils/role.php';
+
