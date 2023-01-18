@@ -33,13 +33,22 @@ echo '</div><hr>';*/
 
 // TEST insert
 echo '<div><h2>Test insert</h2>';
+$idInserted2 = $dbManager->insert(
+    'INSERT INTO users(email, password, role, last_ip) VALUES(?, ?, ?, ?)',
+    ['samba.dako@hotmail.fr','pelleteuse88*£', 1, $_SERVER["REMOTE_ADDR"]]
+);
+
+var_dump($idInserted2);
+
+
 $idInserted = $dbManager->insert(
-    'INSERT INTO bankaccounts(id_bank, nom, prenom, date_naissance, age, adresse, mail, numero) VALUES(?, ?, ?, ?, ?, ?, ?, ?)',
-    ['9', 'Dako', 'Samba', '2004-10-09', '18', '5 rue René Echavidre Taverny 95150', 'samba.dako@hotmail.fr', '098765432']
+    'INSERT INTO bankaccountss(id_user, nom, prenom, date_naissance, age, adresse, mail, numero) VALUES(?, ?, ?, ?, ?, ?, ?, ?)',
+    [1, 'Dako', 'Samba', '2004-10-09', 18, '5 rue René Echavidre Taverny 95150', 'samba.dako@hotmail.fr', '098765432']
 );
 
 var_dump($idInserted);
 echo '</div><hr>';
+
 
 // TEST getById
 echo '<div><h2>Test getById</h2>';

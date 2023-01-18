@@ -8,6 +8,8 @@ require_once __DIR__ . '/DbObject.php';
  * Complétez les fonctions suivantes pour les faires fonctionner
  */
 
+
+ 
 class DbManager {
     private $db;
 
@@ -17,54 +19,68 @@ class DbManager {
 
     // return l'id inseré
     function insert(string $sql, array $data) {
-        $ins = $this->db ->prepare($sql); 
-        $ins -> execute($data);
-        return $data;
+        $sth = $this->db->prepare($sql);
+        $sth->execute($data);
+        echo $this->db->lastInsertId();
     }
 
     function insert_advanced(DbObject $dbObj) {
-        $ins = $this->db ->prepare($sql);
-        $ins -> execute($data);
-        $ins->setFetchMode(PDO::FETCH_CLASS, 'ContcatForms');
-        return $ins->fetchAll();
+        $tableName = strtolower(get_class($dbObj)).'s';
+        $sql = 'INSERT INTO '.$tableName.'(';
+        $cpt = 0;
+        $data = [];
+        foreach($dbObj as $clef => $value){
+            if (!empty($value)){
+                $sql = $sql.$clef.', ';
+                array_push($data, $value);
+                $cpt += 1;
+            }
+        }
+        $sql = substr($sql,0,-2).') VALUES (';
+        for ($i = 1; $i<$cpt+1; $i++){
+            $sql = $sql.'?, ';
+        }
+        $sql = substr($sql,0,-2).')';
+        return $this->insert($sql, $data);
     }
 
     function select(string $sql, array $data, string $className) {
-        $sel = $this->db ->prepare($sql);
-        $sel->execute($data);
-        $sel->setFetchMode(PDO::FETCH_CLASS, $className);
-        return $sel->fetchAll();
+        $req = $this->db->prepare($sql);
+        $req->execute($data);
+        $req->setFetchMode(PDO::FETCH_CLASS, $className);
+        $resultat = $req->fetchAll();
+        return $resultat;
     }
 
     function getById(string $tableName, $id, string $className) {
-        $gbi = $this->db ->prepare("SELECT * FROM $tableName WHERE id = :id");
-        $gbi->execute(["id" => $id]);
-        $gbi->setFetchMode(PDO::FETCH_CLASS, $className);
-        return $gbi->fetch();
+        $req = $this->db->prepare('SELECT * FROM '.$tableName.' WHERE id = ?');
+        $req->execute([$id]);
+        $req->setFetchMode(PDO::FETCH_CLASS, $className);
+        $resultat = $req->fetch();
+        return $resultat;
     }
-
-
-
 
     function getById_advanced($id, string $className) {
-        
+        $tableName = strtolower($className).'s';
+        return $this->getById($tableName, $id, $className);
     }
 
-    function getBy(string $tableName, string $column, $valeur, string $className) {
-        $gb = $this->db ->prepare("SELECT * FROM $tableName WHERE $column = :valeur");
-        $gb-> execute(["valeur" => $valeur]);
-        $gb->setFetchMode(PDO::FETCH_CLASS, $className);
-        return $gb->fetchAll();
+    function getBy(string $tableName, string $column, $value, string $className) {
+        $req = $this->db->prepare('SELECT * FROM '.$tableName.' WHERE '.$column.' = ?');
+        $req->execute([$value]);
+        $req->setFetchMode(PDO::FETCH_CLASS, $className);
+        $resultat = $req->fetch();
+        return $resultat;
     }
 
     function getBy_advanced(string $column, $value, string $className) {
-
+        $tableName = strtolower($className).'s';
+        return $this->getBy($tableName, $column, $value, $className);
     }
 
     function removeById(string $tableName, $id) {
-        $rbi=$this->db -> prepare("DELETE FROM $tableName WHERE id = :id");
-        $rbi->execute(["id" => $id]);
-        return $rbi->fetchAll();
+        $req = $this->db->prepare('DELETE FROM '.$tableName.' WHERE id=?');
+        $req->execute([$id]);
     }
 
     function update(string $tableName, array $data) {
@@ -80,13 +96,11 @@ class DbManager {
         $req->execute($data);
     }
 
-
     function update_advanced(DbObject $dbObj) {
-            $tableName = $dbObj->getTableName();
-            $data = $dbObj->getData();
-            $this->update($tableName, $data);
-           
-        
+        $tableName = strtolower(get_class($dbObj)).'s';
+        echo $tableName;
+        $data = get_object_vars($dbObj);
+        $this->update($tableName, $data);
+        var_dump($data);
     }
-
 }
