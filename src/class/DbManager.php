@@ -27,7 +27,10 @@ class DbManager {
         $ins -> execute($data);
         $ins->setFetchMode(PDO::FETCH_CLASS, 'ContcatForms');
         return $ins->fetchAll();*/
-    }
+        
+        }
+        
+    
 
     function select(string $sql, array $data, string $className) {
         $sel = $this->db ->prepare($sql);
