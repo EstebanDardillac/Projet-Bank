@@ -23,5 +23,6 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 </section>
 
 <?php require_once __DIR__ . '/../src/templates/partials/footer.php'; ?>
+
 </body>
 </html>
