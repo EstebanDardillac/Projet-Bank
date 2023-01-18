@@ -8,7 +8,7 @@ class BankAccounts extends DbObject {
 	public $age;
 	public $adresse;
     public $mail;
-    public $numero
+    public $numero;
 
 }
 

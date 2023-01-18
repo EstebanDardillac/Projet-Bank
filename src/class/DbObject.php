@@ -9,6 +9,7 @@ class DbObject {
 		return strtolower(get_class($this))."s";	
 	}
 	public function getdata(){
-		get_var_object($this);
+		$var = get_var_object($dbObj);
+		var_dump($var);
 	}
 }

@@ -9,7 +9,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 <body>
 
 <div>
-    <h1>DB Manager - Tests</h1>
+    <h1>DB Manager - Tests2</h1>
 </div>
 
 <?php
@@ -34,8 +34,8 @@ echo '</div><hr>';*/
 // TEST insert
 echo '<div><h2>Test insert</h2>';
 $idInserted = $dbManager->insert(
-    'INSERT INTO bankaccounts(id, nom, prenom, date_naissance, age, adresse, mail, numero) VALUES(?, ?, ?, ?, ?, ?, ?, ?)',
-    ['8', 'Dako', 'Samba', '2004-10-09', '18', '5 rue René Echavidre Taverny 95150', 'samba.dako@hotmail.fr', '098765432']
+    'INSERT INTO bankaccounts(id_bank, nom, prenom, date_naissance, age, adresse, mail, numero) VALUES(?, ?, ?, ?, ?, ?, ?, ?)',
+    ['9', 'Dako', 'Samba', '2004-10-09', '18', '5 rue René Echavidre Taverny 95150', 'samba.dako@hotmail.fr', '098765432']
 );
 
 var_dump($idInserted);
