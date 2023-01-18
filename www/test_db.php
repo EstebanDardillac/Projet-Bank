@@ -80,7 +80,7 @@ var_dump($updated);
 echo '</div><hr>';
 
 // TEST update advanced
-echo '<div><h2>Test update</h2>';
+echo '<div><h2>Test update advanced</h2>';
 $laForm = $dbManager->getById('contact_forms', 1, 'ContactForm');
 $laForm->fullname = 'New fullname ??';
 $dbManager->update_advanced($laForm);
