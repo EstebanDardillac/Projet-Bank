@@ -84,7 +84,7 @@ class DbManager {
     function update_advanced(DbObject $dbObj) {
             $tableName = $dbObj->getTableName();
             $data = $dbObj->getData();
-            $this->update($tableName, $data)
+            $this->update($tableName, $data);
            
         
     }
