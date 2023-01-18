@@ -1,6 +1,7 @@
 body {
     background-color: #2C2F33;
     color: white;
+    font-family: 'Audiowide';
 }
 
 header {
@@ -9,8 +10,10 @@ header {
         left: 5%;
         right: 5%;
     display: flex;
+    align-items: center;
     border-style: solid;
     border-color: white;
+    border-radius: 100px;
     box-shadow: 0px 0px 15px rgb(255, 255, 255);
     justify-content: space-around;
 }
@@ -28,9 +31,26 @@ header {
     padding: 15px;
 }
 
+#loginsep {
+    margin-top: 10%;
+}
+
+.space {
+    margin-left: 25px;
+}
+
+.correctlink{
+    text-decoration: none;
+    color: white;
+}
+
+.divnav {
+    justify-content: space-around;
+}
+
 .sect1 {
     display: flex;
-    margin-top: 100px;
+    margin-top: 15%;
     justify-content: space-around;
     text-align: center;
     align-items: center;
@@ -45,4 +65,5 @@ header {
     position:fixed;
         bottom: 0;
         left: 5%;
+    font-family: 'Courier New', Courier, monospace;
 }

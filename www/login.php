@@ -10,7 +10,17 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 ?>
 <body>
 
-<h1>Login</h1>
+<header>
+    <a href="index.php" class="correctlink"><h1 id="title">Responsive-Bank</h1></a>
+    <nav>
+        <div class="divnav">
+            <a href="#" class="correctlink">Compte Banquaire</a>
+            <a href="login.php" class="correctlink , space">Profil Utilisateur</a>
+        </div>
+    </nav>
+</header>
+
+<h1 id="loginsep">Login</h1>
 
 <form action="/actions/login.php" method="post">
 	<div>
