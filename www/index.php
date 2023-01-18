@@ -11,7 +11,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 <body>
 
 <header>
-    <h1>Este-Bank</h1>
+    <h1>EsteBank</h1>
 </header>
 
 <section class="sect1">
