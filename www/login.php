@@ -24,6 +24,10 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 		<input type="password" id="password" name="password">
 	</div>
 	<button id="button" type="submit">Login</button>
+	<div id="inscription">
+		<label for="password">Pas encore de compte :</label>
+		<button id="button" type="submit">inscription</button>
+	</div>
 </form>
 </div>
 

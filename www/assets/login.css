@@ -5,6 +5,10 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .titre {
+    background-color:#1a0521;
+    height: auto;
+    width: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 60px;
     margin-right: 10%;
     margin-left: 10%;
@@ -13,6 +17,10 @@ body{
     text-align: center; 
 }
 #contenu {
+    background-color:#1a0521;
+    height: auto;
+    width: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
