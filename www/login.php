@@ -21,7 +21,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
     </nav>
 </header>
 
-<h1 id="loginsep">Login</h1>
+<h1 class="titre">Login</h1>
 
 <div id="contenu">
 <form action="/actions/login.php" method="post">
