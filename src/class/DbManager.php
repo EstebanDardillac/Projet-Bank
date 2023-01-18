@@ -17,7 +17,7 @@ class DbManager {
 
     // return l'id inseré
     function insert(string $sql, array $data) {
-        $ins = $this->db ->prepare($sql);
+        $ins = $this->db ->prepare($sql); 
         $ins -> execute($data);
         return $data;
     }
@@ -47,7 +47,7 @@ class DbManager {
 
 
     function getById_advanced($id, string $className) {
-        //$this->db -> prepare(getById($id), $className);
+        
     }
 
     function getBy(string $tableName, string $column, $valeur, string $className) {
@@ -82,7 +82,11 @@ class DbManager {
 
 
     function update_advanced(DbObject $dbObj) {
-        //$this->db ->prepare(update($dbObj));
+            $tableName = $dbObj->getTableName();
+            $data = $dbObj->getData();
+            $this->update($tableName, $data)
+           
+        
     }
 
 }
