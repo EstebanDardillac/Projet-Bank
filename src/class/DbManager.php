@@ -51,7 +51,12 @@ class DbManager {
 
     function getById_advanced($id, string $className) {
         //$this->db -> prepare(getById($id), $className);
-    }
+        $class = strtolower($className);
+        $gbi = $this->db ->prepare("SELECT * FROM $className WHERE id = :id");
+        $gbi->execute(["id" => $id]);
+        $gbi->setFetchMode(PDO:: FETCH_CLASS, $className);
+        return $gbi->fetchAll();
+        }
 
     function getBy(string $tableName, string $column, $valeur, string $className) {
         $gb = $this->db ->prepare("SELECT * FROM $tableName WHERE $column = :valeur");

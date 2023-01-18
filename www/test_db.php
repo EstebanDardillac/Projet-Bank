@@ -15,7 +15,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 <?php
 // TEST select
 echo '<div><h2>Test select</h2>';
-$forms = $dbManager->select('SELECT * FROM contact_forms', [], 'ContactForm');
+$forms = $dbManager->select('SELECT * FROM contactForms', [], 'ContactForm');
 var_dump($forms);
 echo '</div><hr>';
 
@@ -26,6 +26,7 @@ $new_contact_form->fullname = 'Test fullname';
 $new_contact_form->phone = '08090080904';
 $new_contact_form->email = 'test@test.com';
 $new_contact_form->message = 'Test MESSAGE';
+$new_contact_form->createdAt = 'Test created at';
 
 $idInsertedAdvanced = $dbManager->insert_advanced($new_contact_form);
 var_dump($idInsertedAdvanced);
@@ -34,8 +35,8 @@ echo '</div><hr>';
 // TEST insert
 echo '<div><h2>Test insert</h2>';
 $idInserted = $dbManager->insert(
-    'INSERT INTO contact_forms(fullname, phone, email, message) VALUES(?, ?, ?, ?)',
-    ['Test fullname', '08020282924', 'test@test.com', 'TEST Message']
+    'INSERT INTO contactForms(fullname, phone, email, message, createdAt) VALUES(?, ?, ?, ?, ?)',
+    ['Test fullname', '08020282924', 'test@test.com', 'TEST Message', 'Test created at']
 );
 
 var_dump($idInserted);
@@ -43,14 +44,14 @@ echo '</div><hr>';
 
 // TEST getById
 echo '<div><h2>Test getById</h2>';
-$contactForm1 = $dbManager->getById('contact_forms', 1, 'ContactForm');
+$contactForm1 = $dbManager->getById('contactForms', 1, 'ContactForm');
 
 var_dump($contactForm1);
 echo '</div><hr>';
 
 // TEST getBy
 echo '<div><h2>Test getBy</h2>';
-$contactForm1b = $dbManager->getBy('contact_forms', 'id', 1, 'ContactForm');
+$contactForm1b = $dbManager->getBy('contactForms', 'id', 1, 'ContactForm');
 
 var_dump($contactForm1b);
 echo '</div><hr>';
@@ -81,14 +82,14 @@ echo '</div><hr>';
 
 // TEST remove by id
 echo '<div><h2>remove by id</h2>';
-$removed = $dbManager->removeById('contact_forms', 1);
+$removed = $dbManager->removeById('contactForms', 1);
 
 var_dump($removed);
 echo '</div><hr>';
 
 // TEST update advanced
 echo '<div><h2>Test update advanced</h2>';
-$laForm = $dbManager->getById('contact_forms', 1, 'ContactForm');
+$laForm = $dbManager->getById('contactForms', 1, 'ContactForm');
 $laForm->fullname = 'New fullname ??';
 $dbManager->update_advanced($laForm);
 
