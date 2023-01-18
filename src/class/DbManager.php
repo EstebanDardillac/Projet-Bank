@@ -65,7 +65,9 @@ class DbManager {
     }
 
     function removeById(string $tableName, $id) {
-        //$this->db -> prepare($tableName.remove($id));
+        $rbi=$this->db -> prepare("DELETE FROM $tableName WHERE id = :id");
+        $rbi->execute(["id" => $id]);
+        return $rbi->fetchAll();
     }
 
     function update(string $tableName, array $data) {
