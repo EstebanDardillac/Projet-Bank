@@ -2,23 +2,23 @@ body {
     background-color: #2C2F33;
 }
 
-.error-alert {
-    background-color: red;
-}
-
-.title {
+header {
+    position:fixed;
+        left: 0;
+        right: 0;
     display: flex;
-    justify-content: center;
-    color: white;
-}
-
-.contour {
     border-style: solid;
     border-color: white;
     box-shadow: 0px 0px 15px rgb(255, 255, 255);
+    justify-content: space-between;
+    color: white;
+    padding-left: 45%;
+    padding-right: 45%;
 }
 
-
+.error-alert {
+    background-color: red;
+}
 
 .credit {
     display: flex;
