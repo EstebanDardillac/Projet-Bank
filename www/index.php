@@ -11,7 +11,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 <body>
 
 <header>
-    <h1>The Bank</h1>
+    <h1>Esteban a dit "Dragon rouge"</h1>
 </header>
 
 <section class="sect1">
