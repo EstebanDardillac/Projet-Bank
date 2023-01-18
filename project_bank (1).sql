@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mar. 17 jan. 2023 à 13:03
+-- Généré le : mer. 18 jan. 2023 à 13:21
 -- Version du serveur :  5.7.34
--- Version de PHP : 8.0.8
+-- Version de PHP : 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `projectbank`
+-- Base de données : `project bank`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bankaccounts` (
-  `id` int(11) NOT NULL,
+  `id_bank` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `nom` varchar(11) NOT NULL,
   `prenom` varchar(11) NOT NULL,
   `date_naissance` date NOT NULL,
@@ -41,37 +42,11 @@ CREATE TABLE `bankaccounts` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact_forms`
---
-
-CREATE TABLE `contact_forms` (
-  `id` int(11) NOT NULL,
-  `fullname` varchar(100) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `message` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `contact_forms`
---
-
-INSERT INTO `contact_forms` (`id`, `fullname`, `phone`, `email`, `message`, `created_at`) VALUES
-(1, 'Test 1', '09090909', 'test1@test.com', 'Votre message', '2023-01-16 10:50:29'),
-(2, 'Test 2', '08080808', 'test2@test.com', 'Votre message 2', '2023-01-16 11:03:23'),
-(3, 'Test fullname', '08020282924', 'test@test.com', 'TEST Message', '2023-01-17 11:37:22'),
-(4, 'Test fullname', '08020282924', 'test@test.com', 'TEST Message', '2023-01-17 11:41:12'),
-(5, 'Test fullname', '08020282924', 'test@test.com', 'TEST Message', '2023-01-17 11:47:25');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `currencies`
 --
 
 CREATE TABLE `currencies` (
-  `id_de_la_money` int(11) NOT NULL,
+  `id_money` int(11) NOT NULL,
   `nom_de_la_money` int(11) NOT NULL,
   `taux_de_change` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -83,8 +58,9 @@ CREATE TABLE `currencies` (
 --
 
 CREATE TABLE `deposit` (
-  `id_depositeur` int(11) NOT NULL,
+  `id_bank` int(11) NOT NULL,
   `montant` int(250) NOT NULL,
+  `id_money` int(11) NOT NULL,
   `nom_monnaie` varchar(11) NOT NULL,
   `date_et_heure_depot` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -96,6 +72,7 @@ CREATE TABLE `deposit` (
 --
 
 CREATE TABLE `transactions` (
+  `id_tx` int(11) NOT NULL,
   `id_expediteur` int(11) NOT NULL,
   `id_destinataire` int(11) NOT NULL,
   `montant` int(250) NOT NULL,
@@ -111,7 +88,7 @@ CREATE TABLE `transactions` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` int(11) NOT NULL,
@@ -126,8 +103,9 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE `withdrawals` (
-  `id_retraiteur` int(11) NOT NULL,
+  `id_bank` int(11) NOT NULL,
   `montant` int(250) NOT NULL,
+  `id_money` int(11) NOT NULL,
   `nom_monnaie` varchar(11) NOT NULL,
   `date_et_heure_retrait` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -137,32 +115,94 @@ CREATE TABLE `withdrawals` (
 --
 
 --
--- Index pour la table `contact_forms`
+-- Index pour la table `bankaccounts`
 --
-ALTER TABLE `contact_forms`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `bankaccounts`
+  ADD PRIMARY KEY (`id_bank`),
+  ADD KEY `id_user` (`id_user`);
+
+--
+-- Index pour la table `currencies`
+--
+ALTER TABLE `currencies`
+  ADD PRIMARY KEY (`id_money`);
+
+--
+-- Index pour la table `deposit`
+--
+ALTER TABLE `deposit`
+  ADD KEY `id_bank` (`id_bank`),
+  ADD KEY `id_money` (`id_money`);
+
+--
+-- Index pour la table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD PRIMARY KEY (`id_tx`) USING BTREE,
+  ADD KEY `id_expediteur` (`id_expediteur`),
+  ADD KEY `id_destinataire` (`id_destinataire`);
 
 --
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Index pour la table `withdrawals`
+--
+ALTER TABLE `withdrawals`
+  ADD UNIQUE KEY `id_bank_2` (`id_bank`),
+  ADD KEY `id_bank` (`id_bank`),
+  ADD KEY `id_bank_3` (`id_bank`),
+  ADD KEY `id_money` (`id_money`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT pour la table `contact_forms`
+-- AUTO_INCREMENT pour la table `transactions`
 --
-ALTER TABLE `contact_forms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `transactions`
+  MODIFY `id_tx` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `bankaccounts`
+--
+ALTER TABLE `bankaccounts`
+  ADD CONSTRAINT `bankaccounts_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+
+--
+-- Contraintes pour la table `deposit`
+--
+ALTER TABLE `deposit`
+  ADD CONSTRAINT `deposit_ibfk_1` FOREIGN KEY (`id_bank`) REFERENCES `bankaccounts` (`id_bank`),
+  ADD CONSTRAINT `deposit_ibfk_2` FOREIGN KEY (`id_money`) REFERENCES `currencies` (`id_money`);
+
+--
+-- Contraintes pour la table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`id_expediteur`) REFERENCES `bankaccounts` (`id_bank`),
+  ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`id_destinataire`) REFERENCES `bankaccounts` (`id_bank`);
+
+--
+-- Contraintes pour la table `withdrawals`
+--
+ALTER TABLE `withdrawals`
+  ADD CONSTRAINT `withdrawals_ibfk_1` FOREIGN KEY (`id_money`) REFERENCES `currencies` (`id_money`),
+  ADD CONSTRAINT `withdrawals_ibfk_2` FOREIGN KEY (`id_bank`) REFERENCES `bankaccounts` (`id_bank`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

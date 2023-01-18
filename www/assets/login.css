@@ -1,0 +1,37 @@
+body{
+    background-color:#1a0521;
+    height: auto;
+    width: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.titre {
+    font-size: 60px;
+    margin-right: 10%;
+    margin-left: 10%;
+    justify-content: space-around;
+    font-weight: bold;
+    text-align: center; 
+}
+#contenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:auto;
+    color: white;
+    margin-left: 40%;
+}
+#email {
+    display: flex;
+    margin-bottom: 1%;
+    flex-direction: column;
+    width: 300px;
+}
+#password {
+    display: flex;
+    margin-bottom: 1%;
+    flex-direction: column;
+    width: 300px;
+}
+#button {
+    cursor: pointer;
+}
