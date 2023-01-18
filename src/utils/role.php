@@ -1,5 +1,5 @@
 <?php
-/*$role = "invité"
+$role = "invité";
 if($user != false){
     switch ($user->role) {
         case 1000:
@@ -18,5 +18,5 @@ if($user != false){
             $role = "Utilisteur banni";
             break;
     }
-}*/
+}
 
