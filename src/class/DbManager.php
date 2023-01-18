@@ -84,7 +84,11 @@ class DbManager {
     }
 
     function update_advanced(DbObject $dbObj) {
-        //$this->db ->prepare(update($dbObj));
-    }
+        $tableName = $dbObj->getTableName();
+        $data = $dbObj->getData();
+        $this->update($tableName, $data)
+       
+    
+}
 
 }
