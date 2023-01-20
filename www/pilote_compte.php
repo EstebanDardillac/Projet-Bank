@@ -94,22 +94,16 @@
                 <form action="trans_traitement.php" method="post">
                     <h2 class="text-center2">Retrait</h2>       
                     <div class="form-group">
-                        <input type="text" name="id_expediteur" class="form-control" placeholder="Id de l'expéditeur" required="required" autocomplete="off">
+                        <input type="text" name="id_bank" class="form-control" placeholder="Votre id bank" required="required" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="id_destinataire" class="form-control" placeholder="Id du destinataire" required="required" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="nom_trans" class="form-control" placeholder="Nom de la transaction" required="required" autocomplete="off">
+                        <input type="text" name="nom_retrait" class="form-control" placeholder="Nom du retrait" required="required" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input type="text" name="montant" class="form-control" placeholder="Montant" required="required" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input type="text" name="monnaie" class="form-control" placeholder="Nom de la monnaie" required="required" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="objet_transaction" class="form-control" placeholder="L'objet de la transaction" required="required" autocomplete="off">
                     </div>
                     <div class="form-group-btn">
                         <button type="submit" class="btnTrans">Effectuer la transaction</button>
@@ -121,22 +115,16 @@
                 <form action="trans_traitement.php" method="post">
                     <h2 class="text-center2">Deposit</h2>       
                     <div class="form-group">
-                        <input type="text" name="id_expediteur" class="form-control" placeholder="Id de l'expéditeur" required="required" autocomplete="off">
+                        <input type="text" name="id_bank" class="form-control" placeholder="Votre id bank" required="required" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="id_destinataire" class="form-control" placeholder="Id du destinataire" required="required" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="nom_trans" class="form-control" placeholder="Nom de la transaction" required="required" autocomplete="off">
+                        <input type="text" name="nom_depot" class="form-control" placeholder="Nom du depot" required="required" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input type="text" name="montant" class="form-control" placeholder="Montant" required="required" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input type="text" name="monnaie" class="form-control" placeholder="Nom de la monnaie" required="required" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="objet_transaction" class="form-control" placeholder="L'objet de la transaction" required="required" autocomplete="off">
                     </div>
                     <div class="form-group-btn">
                         <button type="submit" class="btnTrans">Effectuer la le depot</button>
