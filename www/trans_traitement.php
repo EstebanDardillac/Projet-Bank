@@ -5,14 +5,14 @@
     echo 'testoooo</br>';
 
     // Si les variables existent et qu'elles ne sont pas vides
-    if(!empty($_POST['id_expediteur']) && !empty($_POST['id_destinataire']) && !empty($_POST['montant']) && !empty($_POST['nom_trans']) && !empty($_POST['monnaie']) && !empty($_POST['objet_trans'])){
+    if(!empty($_GET['id_expediteur']) && !empty($_GET['id_destinataire']) && !empty($_GET['montant']) && !empty($_GET['nom_trans']) && !empty($_GET['monnaie']) && !empty($_GET['objet_trans'])){
         // Patch XSS
-        $id_expediteur = htmlspecialchars($_POST['id_expediteur']);
-        $id_destinataire = htmlspecialchars($_POST['id_destinataire']);
-        $nom_trans = htmlspecialchars($_POST['nom_trans']);
-        $montant = htmlspecialchars($_POST['montant']);
-        $monnaie = htmlspecialchars($_POST['monnaie']);
-        $objet_transaction = htmlspecialchars($_POST['objet_transaction']);
+        $id_expediteur = htmlspecialchars($_GET['id_expediteur']);
+        $id_destinataire = htmlspecialchars($_GET['id_destinataire']);
+        $nom_trans = htmlspecialchars($_GET['nom_trans']);
+        $montant = htmlspecialchars($_GET['montant']);
+        $monnaie = htmlspecialchars($_GET['monnaie']);
+        $objet_transaction = htmlspecialchars($_GET['objet_transaction']);
         // On vérifie si l'users existe
         $check = $db->prepare('SELECT id_expediteur, id_destinataire, objet_trans FROM users WHERE nom_trans = ?'); 
         $check->execute(array($nom_trans));

@@ -64,7 +64,7 @@
             </header>
             <section class ="pilote">
                 <section class = "transactions">
-                <form action="trans_traitement.php" method="post">
+                <form action="trans_traitement.php" method="get">
                     <h2 class="text-center">Transactions</h2>       
                     <div class="form-group">
                         <input type="text" name="id_expediteur" class="form-control" placeholder="Id de l'expéditeur" required="required" autocomplete="off">
