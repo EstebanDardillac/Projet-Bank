@@ -103,7 +103,25 @@
             </form>
         </div>
         <style>
-
+            body {
+                background-color: #24082d;
+                color: white;
+                font-family: 'Audiowide';
+            }
+            .form-control {
+                display: flex;
+                width: 30%;
+            }
+            .form-group {
+                display: flex;
+                margin-bottom: 1rem;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .btn-block {
+                display: block;
+                width: 30%;
+            }
         </style>
         </body>
 </html>
