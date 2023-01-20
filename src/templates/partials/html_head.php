@@ -7,4 +7,5 @@
     <title><?= $page_title; ?></title>
     <link rel="stylesheet" href="/www/assets/style.css">
     <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png">
 </head>

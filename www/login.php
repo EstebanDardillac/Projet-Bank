@@ -9,6 +9,7 @@
             <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<link rel="stylesheet" href="/www/assets/login.css">
+            <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png">
             <title>Connexion</title>
         </head>
         <body>
@@ -24,7 +25,7 @@
 
         
         <div class="login-form">
-             <?php 
+        <?php 
 
 				require_once __DIR__ . '/../src/templates/partials/html_head.php';
                 if(isset($_GET['login_err']))
@@ -83,7 +84,7 @@
                 margin-bottom: 15px;
                 box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
                 padding: 30px;
-				margin-top: 30%;
+				margin-top: 50%;
             }
             .login-form h2 {
                 margin: 0 0 15px;
