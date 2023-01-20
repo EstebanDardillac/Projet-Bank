@@ -12,6 +12,10 @@ body{
     font-weight: bold;
     text-align: center; 
 }
+.correctlink{
+    text-decoration: none;
+    color: white;
+}
 #contenu {
     background-color:#1a0521;
     height: auto;
@@ -42,8 +46,4 @@ body{
 }
 .inscription2{
     color: rgb(0, 0, 0);
-}
-.correctlink{
-    text-decoration: none;
-    color: white;
 }

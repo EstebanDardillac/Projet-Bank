@@ -12,15 +12,15 @@
             <title>Connexion</title>
         </head>
         <body>
-		<header>
-		<a href="index.php" class="correctlink"><h1 id="title">Responsive-Bank</h1></a>
-		<nav>
-			<div class="divnav">
-				<a href="#" class="correctlink">Compte Banquaire</a>
-				<a href="login.php" class="correctlink , space">Profil Utilisateur</a>
-			</div>
-		</nav>
-		</header>
+            <header>
+                <a href="index.php" class="correctlink"><h1 id="title">Responsive-Bank</h1></a>
+                <nav>
+                    <div class="divnav">
+                        <a href="#" class="correctlink">Compte Banquaire</a>
+                        <a href="login.php" class="correctlink , space">Profil Utilisateur</a>
+                    </div>
+                </nav>
+            </header>
 
         
         <div class="login-form">
