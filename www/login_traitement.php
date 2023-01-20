@@ -1,9 +1,5 @@
 <?php 
-    require_once __DIR__ . '../../src/init.php'
-    session_start(); // Démarrage de la session
-    require_once __DIR__ . '../../src/config.php'; // On inclu la connexion à la db
-
-    require_once __DIR__ . '../../src/db.php';
+    require_once __DIR__ . '../../src/init.php';
 
     if(!empty($_POST['email']) && !empty($_POST['mdp'])) // Si il existe les champs email, mdp et qu'il sont pas vident
     {
