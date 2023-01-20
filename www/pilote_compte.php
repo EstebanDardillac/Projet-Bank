@@ -62,27 +62,86 @@
             </nav>
             </section>
             </header>
+            <section class ="pilote">
+                <section class = "transactions">
+                <form action="trans_traitement.php" method="post">
+                    <h2 class="text-center">Transactions</h2>       
+                    <div class="form-group">
+                        <input type="text" name="id_expediteur" class="form-control" placeholder="Id de l'expéditeur" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="id_destinataire" class="form-control" placeholder="Id du destinataire" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nom_trans" class="form-control" placeholder="Nom de la transaction" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="montant" class="form-control" placeholder="Montant" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="monnaie" class="form-control" placeholder="Nom de la monnaie" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="objet_transaction" class="form-control" placeholder="L'objet de la transaction" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group-btn">
+                        <button type="submit" class="btnTrans">Effectuer la transaction</button>
+                    </div>   
+                </form>
+                </section>
 
-            <section class = "transactions">
-                <h1>Transactions</h1>
-                <div class = "exp">
-                    <span>Expediteur : </span>
-                    <input type="expéditeur" name="expéditeur" class="form-control" placeholder="Expéditeur" required="required" autocomplete="off">
-                </div>
-                <div class = "dest">
-                    <span>Destinataire : </span>
-                    <input type="destinataire" name="destinataire" class="form-control" placeholder="Destinataire" required="required" autocomplete="off">
-                </div>
-            </section>
+                <section class = "retrait">
+                <form action="trans_traitement.php" method="post">
+                    <h2 class="text-center2">Retrait</h2>       
+                    <div class="form-group">
+                        <input type="text" name="id_expediteur" class="form-control" placeholder="Id de l'expéditeur" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="id_destinataire" class="form-control" placeholder="Id du destinataire" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nom_trans" class="form-control" placeholder="Nom de la transaction" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="montant" class="form-control" placeholder="Montant" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="monnaie" class="form-control" placeholder="Nom de la monnaie" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="objet_transaction" class="form-control" placeholder="L'objet de la transaction" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group-btn">
+                        <button type="submit" class="btnTrans">Effectuer la transaction</button>
+                    </div>   
+                </form>
+                </section>
 
-            <section class = "retrait">
-                <div class= "retireur">
-                    <span> Retireur : </span>
-                    <input type="retireur" name="retireur" class="form-control" placeholder="Retireur" required="required" autocomplete="off">
-                </div>
-            </section>
-
-            <section class = "virement">
-
+                <section class = "virement">
+                <form action="trans_traitement.php" method="post">
+                    <h2 class="text-center2">Deposit</h2>       
+                    <div class="form-group">
+                        <input type="text" name="id_expediteur" class="form-control" placeholder="Id de l'expéditeur" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="id_destinataire" class="form-control" placeholder="Id du destinataire" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nom_trans" class="form-control" placeholder="Nom de la transaction" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="montant" class="form-control" placeholder="Montant" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="monnaie" class="form-control" placeholder="Nom de la monnaie" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="objet_transaction" class="form-control" placeholder="L'objet de la transaction" required="required" autocomplete="off">
+                    </div>
+                    <div class="form-group-btn">
+                        <button type="submit" class="btnTrans">Effectuer la le depot</button>
+                    </div>   
+                </form>
+                </section>
             </section>
         </body>

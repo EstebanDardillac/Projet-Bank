@@ -54,15 +54,15 @@ body {
 }
 
 .transactions {
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
     background-color: #4a0e5e;
     padding: 0%;
-    margin-left: 68px;
     margin-top: 40px;
-    width: 90%;
+    width: 25%;
     height: 400px;
     display: flex;
     font-size: 20px;
@@ -99,7 +99,7 @@ body {
     padding: 0%;
     margin-left: 68px;
     margin-top: 40px;
-    width: 90%;
+    width: 25%;
     height: 400px;
     display: flex;
     font-size: 20px;
@@ -109,3 +109,63 @@ body {
 
 }
 
+
+.form-group{
+    margin-left: 95px;
+}
+
+.form-group-btn{
+    margin-left: 65px;
+}
+
+.text-center{
+    margin-left: 65px;
+}
+
+.text-center2{
+    margin-left: 105px;
+}
+
+
+.btnTrans{
+    display: flex;
+    border-radius: 3px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: white;
+    background-color: rgb(60, 40, 86);
+    border-style: none;
+    margin-top: 25px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 50px;
+}
+
+.btnTrans:hover {
+    background-color: rgb(118, 64, 187);
+    color: rgb(254, 254, 254);
+}
+
+.pilote{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.virement{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #4a0e5e;
+    padding: 0%;
+    margin-left: 68px;
+    margin-top: 40px;
+    width: 25%;
+    height: 400px;
+    display: flex;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    border-radius: 50px;
+
+}
