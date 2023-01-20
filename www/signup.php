@@ -18,7 +18,7 @@
                 <div class="box2">
                     <a href="#" class="correctlink">Compte Banquaire</a>
                     <a href="login.php" class="correctlink , space">Profil Utilisateur</a>
-                    <a href="<?php echo $isconnect4?>" class="correctlink">SE DECONNECTER</a>
+                    <a href="<?php ?>" class="correctlink">SE DECONNECTER</a>
                 </div>
             </nav>
             </section>

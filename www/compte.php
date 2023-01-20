@@ -1,5 +1,9 @@
 
     <?php
+
+        if ($role == "banni" || $role == "invité" ){
+            die("Vous n'avez pas accés à cette page ");
+        }
         require_once __DIR__ . '../../src/init.php';
         require_once __DIR__ . '../../src/db.php';
 

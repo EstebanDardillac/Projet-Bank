@@ -1,37 +1,37 @@
 <?php 
                 require_once __DIR__ . '../../src/init.php';
-                if(isset($_GET['login_err']))
-                {
-                    $err = htmlspecialchars($_GET['login_err']);
+                
+                if(isset($_POST['email'], $_POST['mdp'])){
 
-                    switch($err)
-                    {
-                        case 'password':
-                        ?>
-                            <div class="alert alert-danger">
-                                <strong>Erreur</strong> mot de passe incorrect
-                            </div>
-                        <?php
-                        break;
+                    $email = $_POST['email'];
+                    $mdp = hash('sha256', $_POST['mdp']);
+                        if($email != '' && $mdp != ''){
+                            $sth = $db->prepare('SELECT * FROM users WHERE email = ? AND mdp = ?');
+                            $sth->execute([$email, $mdp]);
+                            $donnees = $sth->fetch();
+                        }
+                        if($donnees != FALSE){
+                            
+                            $_SESSION['connected'] = true;
+                            $_SESSION['id'] = $donnes['id_user'];
+                            header('Location: ./compte.php');
+                        }
+                }
+                ?> 
+                
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="author" content="NoS1gnal"/>
 
-                        case 'email':
-                        ?>
-                            <div class="alert alert-danger">
-                                <strong>Erreur</strong> email incorrect
-                            </div>
-                        <?php
-                        break;
-
-                        case 'already':
-                        ?>
-                            <div class="alert alert-danger">
-                                <strong>Erreur</strong> compte non existant
-                            </div>
-                        <?php
-                        break;
-                    }
-                } 
-                require_once __DIR__ . '/../src/templates/partials/html_head.php'; ?>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+			<link rel="stylesheet" href="/www/assets/login.css">
+            <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png">
+            <title>Connexion</title>
+        </head>
         <body>
             <header>
                 <a href="index.php" class="correctlink"><h1 id="title">Responsive-Bank</h1></a>
@@ -47,7 +47,7 @@
         <div class="login-form">
         
             
-            <form action="login_traitement.php" method="post">
+            <form  method="post">
                 <h2 class="text-center">Connexion</h2>       
                 <div class="form-group">
                     <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
