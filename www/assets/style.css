@@ -1,5 +1,7 @@
 body {
     background-color: #1a0521;
+    height: auto;
+    width: auto;
     color: white;
     font-family: 'Audiowide';
 }
@@ -35,6 +37,48 @@ header {
     margin-top: 10%;
 }
 
+#contenu {
+    background-color:#1a0521;
+    height: auto;
+    width: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:auto;
+    color: white;
+    margin-left: 40%;
+}
+
+#email {
+    display: flex;
+    margin-bottom: 1%;
+    flex-direction: column;
+    width: 300px;
+}
+
+#password {
+    display: flex;
+    margin-bottom: 1%;
+    flex-direction: column;
+    width: 300px;
+}
+
+#button {
+    cursor: pointer;
+    margin-bottom: 1%;
+}
+
+.titre {
+    font-size: 60px;
+    margin-top: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+    justify-content: space-around;
+    font-weight: bold;
+    text-align: center; 
+}
+
 .space {
     margin-left: 25px;
 }
@@ -54,6 +98,10 @@ header {
     justify-content: space-around;
     text-align: center;
     align-items: center;
+}
+
+.inscription2{
+    color: rgb(0, 0, 0);
 }
 
 .error-alert {

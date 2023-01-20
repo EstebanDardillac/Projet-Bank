@@ -30,23 +30,8 @@
                         <?php
                         break;
                     }
-                }
-                ?> 
-                
-<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="author" content="NoS1gnal"/>
-
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-            <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
-			<link rel="stylesheet" href="/www/assets/login.css">
-            <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png">
-            <title>Connexion</title>
-        </head>
+                } 
+                require_once __DIR__ . '/../src/templates/partials/html_head.php'; ?>
         <body>
             <header>
                 <a href="index.php" class="correctlink"><h1 id="title">Responsive-Bank</h1></a>
@@ -86,6 +71,8 @@
                 box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
                 padding: 30px;
 				margin-top: 50%;
+                background-color: #7638B0;
+                border-radius: 20px
             }
             .login-form h2 {
                 margin: 0 0 15px;
