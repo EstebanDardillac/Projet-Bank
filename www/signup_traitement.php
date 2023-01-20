@@ -11,7 +11,7 @@
         $prenom = htmlspecialchars($_POST['prenom']);
         $email = htmlspecialchars($_POST['email']);
         $mdp = hash('sha256', $_POST['mdp']);
-        $mdp_retype = htmlspecialchars($_POST['mdp_retype']);
+        $mdp_retype = hash('sha256', $_POST['mdp_retype']);
         $client_number = rand();
         // On vérifie si l'users existe
         $check = $db->prepare('SELECT email FROM users WHERE email = ?'); 
