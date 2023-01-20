@@ -36,7 +36,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 	<button id="button" type="submit">Login</button>
 	<div id="inscription">
 		<label for="password">Pas encore de compte :</label>
-		<button id="button" type="submit"><a class="inscription2" href="./inscription.php"> Inscription </a></button>
+		<button id="button" type="submit"><a class="inscription2" href="./signup.php"> Inscription </a></button>
 	</div>
 </form>
 </div>
