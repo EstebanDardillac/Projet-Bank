@@ -1,5 +1,5 @@
 <?php 
-                require_once __DIR__ . '../../src/init.php'
+                require_once __DIR__ . '../../src/init.php';
                 if(isset($_GET['login_err']))
                 {
                     $err = htmlspecialchars($_GET['login_err']);
