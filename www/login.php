@@ -1,33 +1,5 @@
-
-<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="author" content="NoS1gnal"/>
-
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-			<link rel="stylesheet" href="/www/assets/login.css">
-            <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png">
-            <title>Connexion</title>
-        </head>
-        <body>
-            <header>
-                <a href="index.php" class="correctlink"><h1 id="title">Responsive-Bank</h1></a>
-                <nav>
-                    <div class="divnav">
-                        <a href="#" class="correctlink">Compte Banquaire</a>
-                        <a href="login.php" class="correctlink , space">Profil Utilisateur</a>
-                    </div>
-                </nav>
-            </header>
-
-        
-        <div class="login-form">
-        <?php 
-
-				require_once __DIR__ . '/../src/templates/partials/html_head.php';
+<?php 
+                require_once __DIR__ . '../../src/init.php'
                 if(isset($_GET['login_err']))
                 {
                     $err = htmlspecialchars($_GET['login_err']);
@@ -60,6 +32,33 @@
                     }
                 }
                 ?> 
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="author" content="NoS1gnal"/>
+
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+			<link rel="stylesheet" href="/www/assets/login.css">
+            <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png">
+            <title>Connexion</title>
+        </head>
+        <body>
+            <header>
+                <a href="index.php" class="correctlink"><h1 id="title">Responsive-Bank</h1></a>
+                <nav>
+                    <div class="divnav">
+                        <a href="#" class="correctlink">Compte Banquaire</a>
+                        <a href="login.php" class="correctlink , space">Profil Utilisateur</a>
+                    </div>
+                </nav>
+            </header>
+
+        
+        <div class="login-form">
+        
             
             <form action="login_traitement.php" method="post">
                 <h2 class="text-center">Connexion</h2>       
