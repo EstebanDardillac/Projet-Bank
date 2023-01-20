@@ -2,6 +2,8 @@ body{
     background-color:#1a0521;
     height: auto;
     width: auto;
+    font-family: 'Audiowide';
+    color: white;
 }
 
 header {
@@ -67,4 +69,12 @@ header {
 
 .inscription2{
     color: rgb(0, 0, 0);
+}
+
+.credit {
+    display: flex;
+    position:fixed;
+        bottom: 0;
+        left: 5%;
+    font-family: 'Courier New', Courier, monospace;
 }
