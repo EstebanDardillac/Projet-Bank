@@ -43,3 +43,7 @@ body{
 .inscription2{
     color: rgb(0, 0, 0);
 }
+.correctlink{
+    text-decoration: none;
+    color: white;
+}
