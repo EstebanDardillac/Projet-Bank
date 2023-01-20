@@ -88,6 +88,7 @@
             }
             .login-form h2 {
                 margin: 0 0 15px;
+				color : white;
             }
             .form-control, .btn {
                 min-height: 38px;
