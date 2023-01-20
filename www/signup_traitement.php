@@ -34,7 +34,7 @@
 
                             // On hash le mot de passe avec Bcrypt, via un coût de 12
                             $cost = ['cost' => 12];
-                            $mdp = password_hash($mdp, PASSWORD_BCRYPT, $cost);
+                            //$mdp = password_hash($mdp, PASSWORD_BCRYPT, $cost);
 
                             // On insère dans la base de données      (ATTENTION PROBLÈME DÉTECTÉ: "'role' doesn't have a default value" NI DANS LA TABLE USERS NI DANS LA TABLE GRADE)
                             $insert = $db->prepare('INSERT INTO users(nom, prenom, email, mdp, role, last_ip, client_number) VALUES( :nom, :prenom, :email, :mdp, :role, :last_ip, :client_number )');

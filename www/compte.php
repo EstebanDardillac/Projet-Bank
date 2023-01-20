@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-    <?php
-        require_once __DIR__ . '../../src/db.php';
-        session_start();
 
+    <?php
+        require_once __DIR__ . '../../src/init.php';
+        require_once __DIR__ . '../../src/db.php';
 
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -40,6 +39,7 @@
             }
         
    ?>
+    <!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
