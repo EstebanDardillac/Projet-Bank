@@ -63,15 +63,16 @@
             </section>
             </header>
             <section class = "infos">
-                <div class="nom"> Nom : <?php $isconnect ?></div>
+                <div class="nom"> Nom : <?php echo $isconnect ?></div>
                 </br>
-                <div class = "prenom">Prénom : <?php $isconnect2 ?></div>
+                <div class = "prenom">Prénom : <?php echo $isconnect2 ?></div>
                 </br>
-                <div class = "mail">Email : <?php $isconnect3 ?></div>
+                <div class = "mail">Email : <?php echo $isconnect3 ?></div>
                 </br>
-                <div class = "role">Grade : <?php $isconnect4 ?></div>
+                <div class = "role">Grade : <?php echo $isconnect4 ?></div>
                 </br>
-                <div class = "client">Numéro de client : <?php $isconnect5 ?></div>
+                <div class = "client">Numéro de client : <?php echo $isconnect5 ?></div>
+                <?php var_dump($_SESSION); ?>
             </section>
 
             <section class = "actions">

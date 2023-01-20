@@ -29,12 +29,12 @@
                     echo 'Entrée de Boucle! 4</br>';
                     if(filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si l'email est de la bonne forme
                         echo 'Entrée de Boucle! 5</br>';
-                        if($password === $password_retype){ // si les deux mdp saisis sont bon
+                        if($mdp === $mdp_retype){ // si les deux mdp saisis sont bon
                             echo 'Entrée de Boucle! 6</br>';
 
                             // On hash le mot de passe avec Bcrypt, via un coût de 12
                             $cost = ['cost' => 12];
-                            $password = password_hash($password, PASSWORD_BCRYPT, $cost);
+                            $mdp = password_hash($mdp, PASSWORD_BCRYPT, $cost);
 
                             // On insère dans la base de données      (ATTENTION PROBLÈME DÉTECTÉ: "'role' doesn't have a default value" NI DANS LA TABLE USERS NI DANS LA TABLE GRADE)
                             $insert = $db->prepare('INSERT INTO users(nom, prenom, email, mdp, role, last_ip, client_number) VALUES( :nom, :prenom, :email, :mdp, :role, :last_ip, :client_number )');
