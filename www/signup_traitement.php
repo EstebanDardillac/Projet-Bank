@@ -10,7 +10,7 @@
         $nom = htmlspecialchars($_POST['nom']);
         $prenom = htmlspecialchars($_POST['prenom']);
         $email = htmlspecialchars($_POST['email']);
-        $mdp = htmlspecialchars($_POST['mdp']);
+        $mdp = hash('sha256', $_POST['mdp']);
         $mdp_retype = htmlspecialchars($_POST['mdp_retype']);
         $client_number = rand();
         // On vérifie si l'users existe
