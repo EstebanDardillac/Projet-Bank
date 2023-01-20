@@ -76,7 +76,6 @@
             <p class="text-center"><a href="signup.php">Inscription</a></p>
         </div>
         <style>
-<<<<<<< HEAD
             .login-form {
                 width: 340px;
                 margin: 50px auto;
@@ -98,9 +97,6 @@
                 font-size: 15px;
                 font-weight: bold;
             }
-=======
-            
->>>>>>> fffd16e29c8a776145468de6eca3e614d7858f04
         </style>
 		</div>
 
