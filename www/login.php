@@ -1,21 +1,24 @@
 <?php 
                 require_once __DIR__ . '../../src/init.php';
-                
-                if(isset($_POST['email'], $_POST['mdp'])){
-
-                    $email = $_POST['email'];
-                    $mdp = hash('sha256', $_POST['mdp']);
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    if(isset($_POST['email'], $_POST['mdp'])){
+                        
+                        $email = $_POST['email'];
+                        $mdp = hash('sha256', $_POST['mdp']);
+                         
                         if($email != '' && $mdp != ''){
                             $sth = $db->prepare('SELECT * FROM users WHERE email = ? AND mdp = ?');
                             $sth->execute([$email, $mdp]);
-                            $donnees = $sth->fetch();
+                            $donnees = $sth->fetchAll();
                         }
-                        if($donnees != FALSE){
+                        
+                        if(count($donnees) > 0){
                             
                             $_SESSION['connected'] = true;
-                            $_SESSION['id'] = $donnes['id_user'];
+                            $_SESSION['id'] = $donnees[0]['id_user'];
                             header('Location: ./compte.php');
                         }
+                    }
                 }
                 ?> 
                 

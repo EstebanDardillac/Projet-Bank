@@ -28,7 +28,7 @@
                         $_SESSION['mdp'] = $result['mot_de_passe'];
                         $_SESSION['id'] = $result['identifiant'];
                         $_SESSION['loggedin'] = true;
-                        header('Location: theme1-facile.php');
+                        header('Location: compte.php');
                     }              
                 }
                      
@@ -40,6 +40,11 @@
                 $isconnect3 = $mail;
                 $isconnect4 = $role;
                 $isconnect5 = $client_number;
+            }
+
+            $isConnected = isset($_SESSION['connected']) && $_SESSION['connected'] == true;
+            if (!$isConnected) {
+                header("Location: /www/login.php");
             }
         
    ?>
